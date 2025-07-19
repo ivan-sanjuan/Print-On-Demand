@@ -1,7 +1,6 @@
 import pandas as pd
 import pprint
 import json
-from specs.trim_size import get_trimSize
 
 trim_size = get_trimSize()
 
