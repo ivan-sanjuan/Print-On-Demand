@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Select Book Specs</title></head>
+<body>
+    <h2>Choose Trim Size:</h2>
+    <select name="trim_sizes">
+        {% for option in trim_options %}
+        <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+    <select name="book_type_values">
+        {% for option in book_type_options %}
+        <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+</body>
+</html>
