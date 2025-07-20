@@ -1,7 +1,14 @@
 import pandas as pd
-import pprint
+import os
 
-df = pd.read_excel('lulu-print-api-spec-sheet.xlsx', header=1)
+df = pd.read_excel('specs/lulu-print-api-spec-sheet.xlsx', header=1)
+
+file_path = 'specs/lulu-print-api-spec-sheet.xlsx'
+
+if os.path.exists(file_path):
+    df = pd.read_excel(file_path, header=1)
+else:
+    print("Excel file not found.")
 
 def get_details():
     df_trim = df[['Trim Size Inches']].to_dict(orient='records')

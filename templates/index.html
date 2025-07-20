@@ -4,7 +4,7 @@
 <body>
     <form method="POST" action="/generate">
         <h2>Choose Trim Size:</h2>
-        <select name="trim_sizes">
+        <select name="trim_options">
             {% for option in trim_options %}
             <option value="{{ option }}">{{ option }}</option>
             {% endfor %}

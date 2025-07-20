@@ -1,10 +1,6 @@
-from flask import Flask, render_template
 from specs.details import get_details
 
-app = Flask(__name__)
-@app.route('/')
-
-def index():
+def get_options():
     print_details = get_details()
     trim_values = print_details[0]
     book_type = print_details[1]
@@ -17,7 +13,6 @@ def index():
     finish_type = print_details[8]
     cover1_type = print_details[9]
     foil_type = print_details[10]
-    print(ppi_sku)
     trim_options = [
         entry['Trim Size Inches']
         for entry in trim_values
@@ -86,8 +81,4 @@ def index():
         'cover1_options': cover1_options,
         'foil_type_options': foil_type_options
     }
-    
-    return render_template('index.html', **options)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    return {**options}
