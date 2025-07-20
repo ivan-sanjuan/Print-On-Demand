@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head><title>Select Book Specs</title></head>
+<body>
+    <form method="POST" action="/generate">
+        <h2>Choose Trim Size:</h2>
+        <select name="trim_options">
+            {% for option in trim_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="book_type_values">
+            {% for option in book_type_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="size_type_values">
+            {% for option in size_type_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="color_type_values">
+            {% for option in color_type_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="print_type_values">
+            {% for option in print_type_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="bind_type_values">
+            {% for option in bind_type_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="paper_type_values">
+            {% for option in paper_type_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="ppi_sku_options">
+            {% for option in ppi_sku_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="finish_type_options">
+            {% for option in finish_type_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="cover1_options">
+            {% for option in cover1_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <select name="foil_type_options">
+            {% for option in foil_type_options %}
+            <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Generate SKU">
+    </form>
+        {% if sku %}
+        <h3>Your Generated SKU:</h3>
+        <p>{{ sku }}</p>
+        {% endif %}
+
+</form>
+
+<p>{{ message }}</p>
+
+</body>
+</html>
