@@ -1,6 +1,3 @@
-from flask import render_template
-from specs.details import get_details
-from .app import create_app
 
 # app = create_app()
 # @app.route('/')
